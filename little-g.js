@@ -2,8 +2,6 @@
 
 /*
 
-little-g.js makes javascript object called 'g'
-
 g.Array()      = make gpu array
 g.Function()   = make gpu kernel
 g.canvas       = html canvas element
@@ -22,9 +20,6 @@ g.gl.getExtension("EXT_color_buffer_float");
 g.gl.bindBuffer(g.gl.ARRAY_BUFFER, g.gl.createBuffer());
 g.gl.bufferData(g.gl.ARRAY_BUFFER, 
     new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), g.gl.STATIC_DRAW);
-
-g.canvas.width  = 500;
-g.canvas.height = 500;
 
 /* -------------------- Array Generator ------------------ */
 
