@@ -45,7 +45,7 @@ g.Array = (width,height) => {
 
     g.array_count += 1;
 
-  	for (let i of [0,1]) { 	
+    for (let i of [0,1]) { 	
 
         g.gl.activeTexture( g.gl.TEXTURE0 +  array.unit[i]);
         g.gl.bindTexture(   g.gl.TEXTURE_2D, array.texture[i]);
@@ -124,7 +124,7 @@ g.Function = (in_names, out_name, code) => {
 
     /* - Make shaders, compile, build glsl shader program - */
 
- 	let vertex_shader   = g.gl.createShader(g.gl.VERTEX_SHADER);
+    let vertex_shader   = g.gl.createShader(g.gl.VERTEX_SHADER);
     let fragment_shader = g.gl.createShader(g.gl.FRAGMENT_SHADER);
     let header          = '#version 300 es\n precision highp float;'
 
@@ -147,18 +147,18 @@ g.Function = (in_names, out_name, code) => {
     for (let name of in_names) {
         let u_loc = g.gl.getUniformLocation( fun.program, name);  
         fun.samplers.push( u_loc);  	
-	}
+    }
 
     /* - Define fun.run() - */
-
-	fun.run = (arrays_in, array_out) => {
-
-        g.gl.useProgram( fun.program);
+    
+    fun.run = (arrays_in, array_out) => {
+    
+	g.gl.useProgram( fun.program);
 
         for (let i = 0; i < arrays_in.length; i++) { 
-           	g.gl.uniform1i( 
-           		fun.samplers[i], 
-           		arrays_in[i].unit[ arrays_in[i].index ]); 
+            g.gl.uniform1i( 
+                fun.samplers[i], 
+           	arrays_in[i].unit[ arrays_in[i].index ]); 
       	}
 
         if (array_out == "canvas") { 
@@ -166,7 +166,7 @@ g.Function = (in_names, out_name, code) => {
             g.gl.viewport(0,0, g.canvas.width, g.canvas.height); 
         } 
         else { 
-        	array_out.index = 1 - array_out.index;
+            array_out.index = 1 - array_out.index;
             g.gl.bindFramebuffer( g.gl.FRAMEBUFFER, array_out.framebuffer[array_out.index]); 
             g.gl.viewport( 0,0, array_out.width, array_out.height)
         }
