@@ -30,11 +30,11 @@ g.canvas.height = 500;
 
 g.Array = (width,height) => {
 	
-	/* - Make new 'array' - */
+    /* - Make new 'array' - */
 
-	let array = {}
+    let array = {}
 
-	array.width       = width
+    array.width       = width
     array.height      = height 
     array.index       = 0
     array.unit        = [ 2*g.array_count,          2*g.array_count + 1     ]
@@ -51,8 +51,8 @@ g.Array = (width,height) => {
         g.gl.bindTexture(   g.gl.TEXTURE_2D, array.texture[i]);
         g.gl.texParameterf( g.gl.TEXTURE_2D, g.gl.TEXTURE_MIN_FILTER, g.gl.NEAREST);
         g.gl.texParameterf( g.gl.TEXTURE_2D, g.gl.TEXTURE_MAG_FILTER, g.gl.NEAREST);
-        g.gl.texParameterf( g.gl.TEXTURE_2D, g.gl.TEXTURE_WRAP_S, 	  g.gl.CLAMP_TO_EDGE);
-        g.gl.texParameterf( g.gl.TEXTURE_2D, g.gl.TEXTURE_WRAP_T, 	  g.gl.CLAMP_TO_EDGE); 
+        g.gl.texParameterf( g.gl.TEXTURE_2D, g.gl.TEXTURE_WRAP_S,     g.gl.CLAMP_TO_EDGE);
+        g.gl.texParameterf( g.gl.TEXTURE_2D, g.gl.TEXTURE_WRAP_T,     g.gl.CLAMP_TO_EDGE); 
         
         g.gl.texImage2D(   g.gl.TEXTURE_2D, 0, g.gl.RGBA32F, width,height,
              0, g.gl.RGBA, g.gl.FLOAT, new Float32Array(4*width*height) );
@@ -61,7 +61,7 @@ g.Array = (width,height) => {
         g.gl.framebufferTexture2D( g.gl.FRAMEBUFFER, g.gl.COLOR_ATTACHMENT0, g.gl.TEXTURE_2D, array.texture[i], 0); 
     }
 
-   	/* - Get, Set methods - */
+    /* - Get, Set methods - */
 
     array.set = (x,y,w,h, data) => {
 
@@ -81,14 +81,14 @@ g.Array = (width,height) => {
         return data; 
     } 
 
-  	return array;
+    return array;
 }
 
 /*--------------------- Function Generator ---------------------- */
 
 g.Function = (in_names, out_name, code) => { 
 
-	/* - Make new 'fun' - */
+    /* - Make new 'fun' - */
 
     let fun = {};
 
@@ -98,9 +98,9 @@ g.Function = (in_names, out_name, code) => {
     /* - Vertex and fragment shader text - */
 
     let samp = '';
-   	for (let name of in_names) { 
-   		samp += `\nuniform sampler2D ${name};\n`
-   	}
+    for (let name of in_names) { 
+   	samp += `\nuniform sampler2D ${name};\n`
+    }
 
     let vertex_code =
 
