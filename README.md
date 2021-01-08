@@ -6,8 +6,7 @@
 
 <b>g.Function()</b> makes `fun` with compiled glsl program and `run` method
 
-<pre>
-<script src='little-g.js'> </script>
+`<script src='little-g.js'> </script>
 
 <body>
 <script>
@@ -16,13 +15,12 @@ document.body.appendChild(g.canvas)
 
 let A = g.Array(50,50, 'random')
 
-let F = g.Function( ['x'],'y', 'y = texture(x, uv); y.a = 1.0;')
+let F = g.Function( \['x'],'y', 'y = texture(x, uv); y.a = 1.0;')
 
-F.run([A], 'canvas')
+F.run(\[A], 'canvas')
 
 </script> 
 </body>
-
-</pre>
+`
 
 running a script with src='g.js' will create `g` object
