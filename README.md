@@ -1,7 +1,5 @@
-# little-g
+# g.js
 
-'g' helps build gpu arrays and functions. 
+`g` helps build gpu arrays and functions. 
 
-It's like gpu.js only extra short, hence gpu.js --(minify)--> g.js
-
-Also very similar to turbo.js
+It's like `gpu.js` only extra short: `g.js`
