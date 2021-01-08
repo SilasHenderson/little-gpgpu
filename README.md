@@ -1,24 +1,32 @@
 # g.js
 
-`g` helps build gpu arrays and functions. 
-
-It's like a mini `gpu.js` or `turbo.js`.  
+`g` helps build gpu arrays and functions.
 
 <b>g.Array()</b> makes `array` with data in webgl2 texture
 
 <b>g.Function()</b> makes `fun` with compiled glsl program and `run` method
 
 <pre>
+<!doctype html>
 
-<script src='g.js'> </script>
+<script src='little-g.js'> </script>
 
+<body>
 <script>
-  
-let A = g.Array(100,100)
-let F = g.Function(['x'], 'y', 'y = texelFetch(x, tc, 0);')
 
-F.run(A, 'canvas')
+document.body.appendChild(g.canvas)
 
-</script>
+let A = g.Array(50,50, 'random')
+
+let F = g.Function( 
+	['x'],'y', 'y = texture(x, uv); y.a = 1.0;'
+)
+
+F.run([A], 'canvas')
+
+</script> 
+</body>
 
 </pre>
+
+running a script with src='g.js' will create `g` object
