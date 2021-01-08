@@ -4,8 +4,9 @@
 
 It's like a mini `gpu.js` or `turbo.js`.  
 
-Array:      webgl2 texture
-Function:   glsl shader code
+g.Array():      webgl2 texture
+
+g.Function():   glsl shader code
 
 <pre>
 
