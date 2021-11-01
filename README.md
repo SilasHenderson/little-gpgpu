@@ -1,7 +1,7 @@
 some attempts at making a mini turbo.js or gpu.js <br>
 <pre>
-g.Array    = abstraction of webgl2 textures <br>
-g.Function = abstraction of fragment shader <br>
+g.Array    = abstraction of webgl2 textures
+g.Function = abstraction of fragment shader
 </pre>
 <h4> example </h4> 
 <pre>
