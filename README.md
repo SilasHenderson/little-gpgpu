@@ -1,5 +1,3 @@
-# g.js
-<hr>
 some attempts at making a mini turbo.js or gpu.js <br> <br>
 
 g.Array    = abstraction of webgl2 textures <br>
