@@ -1,8 +1,8 @@
 # g.js
+a couple scripts trying to write a script like turbo.js.
 
-`g` helps build gpu arrays and functions.
-
-<h4> Main functions </h4>
+g.Array    = abstraction of webgl2 textures
+g.Function = abstraction of fragment shader
 
 <b>g.Array()</b> makes `array` with data in webgl2 texture
 
@@ -10,10 +10,6 @@
 
 <h4> Mini usage example </h4> 
 <pre>
-// javascript!
-
-document.body.appendChild(g.canvas) 
-
 let A = g.Array(50,50, 'random')
 let F = g.Function(['x'],'y', 'y = texture(x, uv); y.a = 1.0;')
     
