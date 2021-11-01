@@ -1,8 +1,8 @@
-some attempts at making a mini turbo.js or gpu.js <br> <br>
-
+some attempts at making a mini turbo.js or gpu.js <br>
+<pre>
 g.Array    = abstraction of webgl2 textures <br>
 g.Function = abstraction of fragment shader <br>
-
+</pre>
 <h4> example </h4> 
 <pre>
 let A = g.Array(50,50, 'random')
