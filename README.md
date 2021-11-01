@@ -1,7 +1,6 @@
 # g.js
 <hr>
-some attempts at writing a gpgpu engine like turbo.js <br>
-name from gpu.js two letters shorter --> g.js
+some attempts at making a mini turbo.js or gpu.js <br> <br>
 
 g.Array    = abstraction of webgl2 textures <br>
 g.Function = abstraction of fragment shader <br>
